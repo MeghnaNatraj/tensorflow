@@ -74,6 +74,18 @@ py_test(
 )
 
 py_binary(
+    name = "mlir_quantize",
+    srcs = ["mlir_quantize.py"],
+    python_version = "PY3",
+    srcs_version = "PY2AND3",
+    deps = [
+        "//tensorflow/lite/python:convert",
+        "@absl_py//absl:app",
+        "@absl_py//absl/flags",
+    ],
+)
+
+py_binary(
     name = "strip_strings",
     srcs = ["strip_strings.py"],
     python_version = "PY3",
